@@ -1,503 +1,366 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <title>Untitled Document</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link type="text/css" href="resources/css/reset.css" rel="Stylesheet" />
-    <link type="text/css" href="resources/css/default.css" rel="Stylesheet" />
-    <!--<link href='https://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>-->
+<html lang="en" class="no-js">
+    <!-- Begin Head -->
+    <head>
+        <!-- Basic -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Anna Netrebko & Yusif Eyvazov - Miami 2018</title>
+        <meta name="description" content="Great concert in Miami, at Adrienne Arsht Center. Book your tickets now">
 
-    <script type="text/javascript">
-        if (location.href.toString().indexOf('file://localhost/') == 0) {
-            location.href = location.href.toString().replace('file://localhost/', 'file:///');
-        }
-    </script>
+        <!-- Web Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i|Montserrat:400,700" rel="stylesheet">
 
-    <!-- 8.0.0.3323 -->
-<script src="resources/scripts/jquery-1.7.1.min.js"></script>
-<script src="resources/scripts/startPre.js"></script>
-<script src="data/document.js"></script>
+        <!-- Vendor Styles -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/themify/themify.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/scrollbar/scrollbar.min.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/swiper/swiper.min.css" rel="stylesheet" type="text/css"/>
 
-    <style type="text/css">
-
-#outerContainer {
-	width:1000px;
-	height:1500px;
-}
-
-.vsplitbar {
-    width: 3px;
-    /*background: #B9B9B9;*/
-    border-right: 1px solid #8f949a;
-}
-
-.vsplitbar:hover, .vsplitbar.active {
-    background: #8f949a;
-}
-
-#rightPanel {
-    background-color: White;
-}
-
-/*#leftPanel {
-    min-width: 120px;
-}*/
-
-.splitterMask {
-   position:absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
-   background-image: url(resources/images/transparent.gif);
-   z-index: 20000;
-}
-
-    </style>
-    <script type="text/javascript" language="JavaScript"><!--
-        var SITEMAP_COLLAPSE_VAR_NAME = 'c';
-        var PLUGIN_VAR_NAME = 'g';
-        var FOOTNOTES_VAR_NAME = 'fn';
-        var ADAPTIVE_VIEW_VAR_NAME = 'view';
-        var lastLeftPanelWidth = 295;
-        var toolBarOnly = true;
-
-        // isolate scope
-        (function() {
-            setUpController();
-            
-            var configuration = $axure.document.configuration;
-            var _settings = {};
-            _settings.projectId = configuration.prototypeId;
-            _settings.isAxshare = configuration.isAxshare;
-            _settings.loadFeedbackPlugin = configuration.loadFeedbackPlugin;
-            var cHash = getHashStringVar(SITEMAP_COLLAPSE_VAR_NAME);
-            _settings.startCollapsed = cHash == "1";
-            if(cHash == "2") closePlayer();
-            var gHash = getHashStringVar(PLUGIN_VAR_NAME);
-            if(gHash == "") gHash = 1;
-            _settings.startPluginGid = gHash;
-
-            $axure.player.settings = _settings;
-
-            $(window).bind('load', function() {
-                if(CHROME_5_LOCAL && !$('body').attr('pluginDetected')) {
-                    window.location = 'resources/chrome/chrome.html';
-                }
-            });
-
-            $(document).ready(function() {
-                $axure.page.bind('load.start', mainFrame_onload);
-                $axure.messageCenter.addMessageListener(messageCenter_message);
-
-                $(document).on('pluginShown', function (event, data) {
-                    setVarInCurrentUrlHash('g', data ? data : '');
-                });
-
-                $(document).on('pluginCreated', function(event, data) {
-                    if($axure.player.settings.startPluginGid == data) {
-                        $axure.player.showPlugin(data);
-                    }
-                });
-
-                if($axure.player.settings.loadFeedbackPlugin) {
-                    if($axure.player.settings.isAxshare) {
-                        $axure.utils.loadJS('/Scripts/plugins/feedback/feedback8.js');
-                    } else {
-                        $axure.utils.loadJS('http://share.axure.com/Scripts/plugins/feedback/feedback8.js');
-                    }
-                }
-
-                if(navigator.userAgent.indexOf("MSIE") >= 0) $('#outerContainer').width('100%');
-                initialize();
-                if($axure.player.settings.startCollapsed) $('#outerContainer').splitter({ sizeLeft: 0 });
-                else $('#outerContainer').splitter({ sizeLeft: lastLeftPanelWidth });
-                $('#leftPanel').width(lastLeftPanelWidth);
-                
-                $(window).resize(function() { resizeContent(); });
-
-                $('#maximizePanelContainer').hide();
-
-                initializeLogo();
-
-                $(window).resize();
-                resizeContent();
-                
-                $axure.player.collapseToBar();
-
-                if($axure.player.settings.startCollapsed) {
-                    collapse();
-                    $('#leftPanel').width(0);
-                }
-
-                if(MOBILE_DEVICE) {
-                    $('#interfaceControlFrameMinimizeContainer').height('45px');
-                    $('#interfaceControlFrameMinimizeContainer a').height('45px');
-                    $('#interfaceControlFrameHeaderContainer').css('margin-top','45px');
-                    $('#interfaceControlFrameCloseContainer a').css('padding','10px 0px');
-                    $('#maximizePanelContainer').height('45px');//.css('top','inherit').css('bottom','0px');
-
-                    $('body').removeClass('hashover');
-
-                    if(IOS) {
-                        $('#rightPanel').css('overflow', 'auto').css('-webkit-overflow-scrolling', 'touch').css('-ms-overflow-x', 'hidden');
-
-                        window.addEventListener("orientationchange", function() {
-                            var viewport = document.querySelector("meta[name=viewport]");
-                            //so iOS doesn't zoom when switching back to portrait
-                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
-                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-                            resizeContent();
-                        }, false);
-
-                        $axure.page.bind('load.start', function() {
-                            resizeContent();
-                        });
-                    }
-                }
-
-            });
-
-            function initialize() {
-                var legacyQString = getQueryString("Page");
-                if (legacyQString.length > 0) {
-                    location.href = location.href.substring(0, location.href.indexOf("?")) + "#p=" + legacyQString;
-                    return;
-                }
-
-                var mainFrame = document.getElementById("mainFrame");
-                mainFrame.contentWindow.location.href = getInitialUrl();
-            }
-
-            function initializeLogo() {
-                if($axure.document.configuration.logoImagePath) {
-                    var image = new Image();
-                    image.onload = function() {
-                        $('#logoImage').css('max-width', this.width + 'px');
-                        $axure.player.resizeContent();
-                    };
-                    image.src = $axure.document.configuration.logoImagePath;
-                
-                    $('#interfaceControlFrameLogoImageContainer').html('<img id="logoImage" src="" />');
-                    $('#logoImage').attr('src', $axure.document.configuration.logoImagePath).load(function() { resizeContent(); });
-                } else $('#interfaceControlFrameLogoImageContainer').hide();
-
-                if ($axure.document.configuration.logoImageCaption) {
-                    $('#interfaceControlFrameLogoCaptionContainer').html($axure.document.configuration.logoImageCaption);
-                } else $('#interfaceControlFrameLogoCaptionContainer').hide();
-
-                if(!$('#interfaceControlFrameLogoImageContainer').is(':visible') && !$('#interfaceControlFrameLogoCaptionContainer').is(':visible')) {
-                    $('#interfaceControlFrameLogoContainer').hide();
-                }
-            }
-
-            var resizeContent = $axure.player.resizeContent = function() {
-                var newHeight = $(window).height();
-                var newWidth = $(window).width();
-
-                var controlContainerHeight = newHeight;// - 30;
-                if($('#interfaceControlFrameLogoContainer').is(':visible')) controlContainerHeight -= $('#interfaceControlFrameLogoContainer').outerHeight();// + 16;
-
-                $('#outerContainer').height(newHeight).width(newWidth);
-                $('.vsplitbar').height(newHeight);
-                $('#leftPanel').height(newHeight);
-                $('#interfaceControlFrame').height(newHeight);
-                $('#interfaceControlFrameContainer').height(newHeight);
-                $('#interfaceControlFrameHostContainer').height(controlContainerHeight);
-
-                $('#rightPanel').height(newHeight);
-                $('#mainFrame').height(newHeight);
-
-                if($('#leftPanel').is(':visible')) $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
-                else $('#rightPanel').width($(window).width());
-
-                $(document).trigger('ContainerHeightChange',[controlContainerHeight]);
-
-                if(MOBILE_DEVICE) {
-                    if(!(getHashStringVar(ADAPTIVE_VIEW_VAR_NAME).length > 0)) $axure.messageCenter.postMessage('setAdaptiveViewForSize', {'width':newWidth, 'height':$('#rightPanel').height()});
-                }
-            }
-
-            var collapseToBar = $axure.player.collapseToBar = function() {
-                lastLeftPanelWidth = $('#leftPanel').width();
-                $('#leftPanel').width('55px');
-                $('.vsplitbar').hide();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width());
-                $(window).resize();
-                $('#outerContainer').trigger('resize');
-                toolBarOnly = true;
-            }
-
-            var expandFromBar = $axure.player.expandFromBar = function() {
-                if($('.vsplitbar').is(':visible')) return;
-
-                $('#leftPanel').width(lastLeftPanelWidth);
-                $('.vsplitbar').show();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
-                $(window).resize();
-                $('#outerContainer').trigger('resize');
-                toolBarOnly = false;
-            }
-
-        })();
-
-        function messageCenter_message(message, data) {
-            if(message == 'expandFrame') expand();
-            else if(message == 'getCollapseFrameOnLoad' && $axure.player.settings.startCollapsed && !MOBILE_DEVICE) $axure.messageCenter.postMessage('collapseFrameOnLoad');
-        }
-
+        <!-- Theme Styles -->
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/global/global.css" rel="stylesheet" type="text/css"/>
         
-        function getInitialUrl() {
-            var pageName = getHashStringVar("p");
-            if(pageName.length > 0) return pageName + ".html";
-            else {
-                var url = getFirstPageUrl($axure.document.sitemap.rootNodes);
-                return (url ? url : "about:blank");
-            }
-        }
+        <!-- Theme Skins -->
+        <link href="css/theme/red.css" rel="stylesheet" type="text/css"/>
 
-        function getFirstPageUrl(nodes) {
-            for (var i = 0; i < nodes.length; i++) {
-                var node = nodes[i];
-                if (node.url) return node.url;
-                else {
-                    var hasChildren = (node.children && node.children.length > 0);
-                    if (hasChildren) {
-                        var url = getFirstPageUrl(node.children);
-                        if (url) return url;
-                    }
-                }
-            }
-            return null;
-        }
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    </head>
+    <!-- End Head -->
 
-        function closePlayer() {
-            if($axure.page.location) window.location.href = $axure.page.location;
-            else {
-                var pageFile = getInitialUrl();
-                var currentLocation = window.location.toString();
-                window.location.href = currentLocation.substr(0, currentLocation.lastIndexOf("/") + 1) + pageFile;
-            }
-        }
+    <!-- Body -->
+    <body>
+        <!--========== HEADER ==========-->
+        <header class="s-header js__header-sticky js__header-overlay">
+            <!-- Overlay -->
+            <div class="s-header-bg-overlay js__bg-overlay">               
+            </div>
+            <!-- End Overlay -->
+        </header>
+        <!--========== END HEADER ==========-->
 
-        function replaceHash(newHash) {
-            var currentLocWithoutHash = window.location.toString().split('#')[0];
-
-            //We use replace so that every hash change doesn't get appended to the history stack.
-            //We use replaceState in browsers that support it, else replace the location
-            if(typeof window.history.replaceState != 'undefined') {
-                try {
-                    //Chrome 45 (Version 45.0.2454.85 m) started throwing an error here when generated locally (this only happens with sitemap open) which broke all interactions.
-                    //try catch breaks the url adjusting nicely when the sitemap is open, but all interactions and forward and back buttons work.
-                    //Uncaught SecurityError: Failed to execute 'replaceState' on 'History': A history state object with URL 'file:///C:/Users/Ian/Documents/Axure/HTML/Untitled/start.html#p=home' cannot be created in a document with origin 'null'.
-                    window.history.replaceState(null, null, currentLocWithoutHash + newHash);
-                } catch(ex) {}
-            } else {
-                window.location.replace(currentLocWithoutHash + newHash);
-            }
-        }
-
-        function collapse() {
-            setVarInCurrentUrlHash('c', 1);
-            if(!toolBarOnly) lastLeftPanelWidth = $('#leftPanel').width();
-
-            $('#maximizePanelContainer').show();
-            $('#leftPanel').hide();
-            $('.vsplitbar').hide();
-            $('#rightPanel').width($(window).width());
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-
-            $(document).trigger('sidebarCollapse');
-
-            if(MOBILE_DEVICE) {
-                $('#maximizePanelContainer').animate({
-                    top:$('#rightPanel').height() - $('#maximizePanelContainer').height()
-                }, 300, 'swing', function() {
-                    $('#maximizePanelContainer').css('top', 'inherit').css('bottom', '0px');
-                });
-            }
-        }
-
-        function expand() {
-            if(MOBILE_DEVICE) {
-                $('#maximizePanelContainer').css('top', '0px').css('bottom', 'inherit');
-            }
-
-            deleteVarFromCurrentUrlHash('c');
-            $('#maximizePanelContainer').hide();
-            $('#leftPanel').width(lastLeftPanelWidth);
-            $('#leftPanel').show();
-            if(!toolBarOnly) {
-                $('.vsplitbar').show();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);
-            } else {
-                $axure.player.collapseToBar();
-            }
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-
-            $(document).trigger('sidebarExpanded');
-        }
-
-
-        function mainFrame_onload() {
-            if($axure.page.pageName) document.title = $axure.page.pageName;
-        }
-
-        function getQueryString(query) {
-            var qstring = self.location.href.split("?");
-            if(qstring.length < 2) return "";
-            return GetParameter(qstring, query);
-        }
-        
-        function GetParameter(qstring, query) {
-            var prms = qstring[1].split("&");
-            var frmelements = new Array();
-            var currprmeter, querystr = "";
-
-            for(var i = 0; i < prms.length; i++) {
-                currprmeter = prms[i].split("=");
-                frmelements[i] = new Array();
-                frmelements[i][0] = currprmeter[0];
-                frmelements[i][1] = currprmeter[1];
-            }
-
-            for(j = 0; j < frmelements.length; j++) {
-                if(frmelements[j][0].toLowerCase() == query.toLowerCase()) {
-                    querystr = frmelements[j][1];
-                    break;
-                }
-            }
-            return querystr;
-        }
-        
-        function getHashStringVar(query) {
-            var qstring = self.location.href.split("#");
-            if(qstring.length < 2) return "";
-            return GetParameter(qstring, query);
-        }
-
-        function setHashStringVar(currentHash, varName, varVal) {
-            var varWithEqual = varName + '=';
-            var poundVarWithEqual = varVal === '' ? '' :  '#' + varName + '=' + varVal;
-            var ampVarWithEqual = varVal === '' ? '' :  '&' + varName + '=' + varVal;
-            var hashToSet = '';
-
-            var pageIndex = currentHash.indexOf('#' + varWithEqual);
-            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
-            if(pageIndex != -1) {
-                var newHash = currentHash.substring(0, pageIndex);
-
-                newHash = newHash == '' ? poundVarWithEqual : newHash + ampVarWithEqual;
-
-                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
-                if(ampIndex != -1) {
-                    newHash = newHash == '' ? '#' + currentHash.substring(ampIndex + 1) : newHash + currentHash.substring(ampIndex);
-                }
-                hashToSet = newHash;
-            } else if(currentHash.indexOf('#') != -1) {
-                hashToSet = currentHash + ampVarWithEqual;
-            } else {
-                hashToSet = poundVarWithEqual;
-            }
-
-            if(hashToSet != '' || varVal == '') {
-                return hashToSet;
-            }
-
-            return null;
-        }
-
-        function setVarInCurrentUrlHash(varName, varVal) {
-            var newHash = setHashStringVar(window.location.hash, varName, varVal);
-
-            if(newHash != null) {
-                replaceHash(newHash);
-            }
-        }
-
-        function deleteHashStringVar(currentHash, varName) {
-            var varWithEqual = varName + '=';
-
-            var pageIndex = currentHash.indexOf('#' + varWithEqual);
-            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
-            if(pageIndex != -1) {
-                var newHash = currentHash.substring(0, pageIndex);
-
-                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
-
-                //IF begin of string....if none blank, ELSE # instead of & and rest
-                //IF in string....prefix + if none blank, ELSE &-rest
-                if(newHash == '') { //beginning of string
-                    newHash = ampIndex != -1 ? '#' + currentHash.substring(ampIndex + 1) : '';
-                } else { //somewhere in the middle
-                    newHash = newHash + (ampIndex != -1 ? currentHash.substring(ampIndex) : '');
-                }
-
-                return newHash;
-            }
-
-            return null;
-        }
-
-        function deleteVarFromCurrentUrlHash(varName) {
-            var newHash = deleteHashStringVar(window.location.hash, varName);
-
-            if(newHash != null) {
-                replaceHash(newHash);
-            }
-        }
-    --></script>
-    
-    <link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
-    <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
-    <link type="text/css" rel="Stylesheet" href="plugins/debug/styles/debug.css" />
-    <script src="resources/scripts/startPost.js"></script>
-
-
-    <!--<link type="text/css" rel="Stylesheet" href="plugins/recordplay/styles/recordplay.css" />
-    <script type="text/javascript" src="plugins/recordplay/recordplay.js"></script>-->
-    
-
-</head>
-<body scroll="no" class="hashover">
-    <div id="outerContainer">
-
-        <div id="leftPanel">
-            <div id="interfaceControlFrame">
-                <div id="interfaceControlFrameMinimizeContainer">
-                    <a title="Collapse" id="interfaceControlFrameMinimizeButton" onclick="collapse();">&nbsp;</a>
+        <!--========== PROMO BLOCK ==========-->
+         <div class="s-promo-block-v3 g-bg-position--center2 g-fullheight--sm" style="background: url('img/1920x1080/09.jpg');">
+            <div class="container g-ver-center--sm g-padding-y-125--xs g-padding-y-0--sm">
+                <div class="g-margin-t-30--xs g-margin-t-0--sm g-margin-b-30--xs g-margin-b-70--md">
+                    <h1 class="g-font-size-34--xs g-font-size-45--sm g-font-size-50--lg g-color--white">Anna Netrebko<br>Yusif Eyvazov</h1>
                 </div>
-                <div id="interfaceControlFrameHeaderContainer">
-                    <ul id="interfaceControlFrameHeader"></ul>
-                </div>
-                <div id="interfaceControlFrameContainer">
-                    <div id="interfaceControlFrameLogoContainer">
-                        <div id="interfaceControlFrameLogoImageContainer"></div>
-                        <div id="interfaceControlFrameLogoCaptionContainer"></div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-4 g-margin-b-50--xs g-margin-b-0--md">
+                        <div class="s-promo-block-v3__divider g-display-none--xs g-display-block--md"></div>
+                        <div class="row">
+                            <div class="col-sm-6 g-margin-b-30--xs g-margin-b-0--md">
+                                <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
+                                    <p class="g-font-size-18--xs g-color--white-opacity">Miami FL<br>Adrienne Arsht Center<br>Knight Concert Hall</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1">
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                                            <span class="s-promo-block-v3__date g-font-size-100--xs g-font-size-135--lg g-font-weight--300 g-color--primary">28</span>
+                                        </div>
+                                    </div>
+                                    <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
+                                        <span class="s-promo-block-v3__month g-font-size-18--xs g-font-size-22--lg g-font-weight--300 g-color--white-opacity-light">Oct</span>
+                                        <span class="s-promo-block-v3__year g-font-size-18--xs g-font-size-22--lg g-font-weight--300 g-color--white-opacity-light">2018</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="interfaceControlFrameHostContainer">
+                    <div class="col-sm-4 col-sm-pull-8">
+                    <a href="#plan" class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50 g-padding-x-50--xs g-margin-b-20--xs">Get Your Tickets</a>
                     </div>
-                </div>
-                <div id="interfaceControlFrameCloseContainer">
-                    <a title="Close" id="interfaceControlFrameCloseButton" onclick="closePlayer();">CLOSE</a>
                 </div>
             </div>
         </div>
-        <div id="rightPanel">
-            <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" src="" frameborder="0" style="display: block;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <!--========== END PROMO BLOCK ==========-->
+
+        <!--========== PAGE CONTENT ==========-->
+        <!-- Masonry -->
+        <div class="g-hor-divider__dashed--sky-light">
+            <div class="container g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="row">
+                    <div class="col-md-5 col-md-push-7 g-margin-t-0--xs g-margin-t-70--lg g-margin-b-60--xs g-margin-b-0--lg">
+                        <div class="g-margin-b-40--xs">
+                            <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">About</p>
+                            <h2 class="g-font-size-32--xs g-font-size-36--sm g-margin-b-30--xs">The first in 2018 for US</h2>
+                            <p>For one night only, two of the world’s best opera voices, Anna Netrebko (soprano) and Yusif Eyvazov (tenor), will perform in concert. Anna Netrebko has redefined the meaning of being an opera star.</p>
+                            <p>Today’s reigning prima donna, her distinctively beautiful voice, abundant charisma and arresting stage presence make an indelible impression in every role she portrays. Together with her husband Yusif Eyvazov, they make a breathtaking tandem on stage.</p>
+                            <p>The program will feature music by Italian composers Verdi, Cilea, Boito, Mascagni, Puccini, Catalani and more!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-pull-5">
+                        <img class="img-responsive g-width-100-percent--xs" src="img/500x750/01.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- End Masonry -->
 
-    </div>
+        <!-- Speakers -->
 
-    <div id="maximizePanelContainer">
-        <iframe id="expandFrame" src="resources/expand.html" width="100%" height="100%" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
-    </div>
+            <div class="container g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="g-text-center--xs g-margin-b-80--xs">
+                    <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Crew</p>
+                    <h2 class="g-font-size-32--xs g-font-size-36--sm">Line Up</h2>
+                </div>
+                <div class="row g-overflow--hidden">
+                    <div class="col-xs-6 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                        <!-- Netrebko-->
+                        <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-400--lg">
+                            <img class="img-responsive g-width-100-percent--xs" src="img/400x400/02.jpg" alt="Image">
+                            <div class="g-position--overlay g-padding-x-30--xs g-padding-y-30--xs g-margin-t-o-60--xs">
+                                <div class="g-bg-color--primary g-padding-x-15--xs g-padding-y-10--xs g-margin-b-20--xs">
+                                    <h4 class="g-font-size-22--xs g-font-size-26--sm g-color--white g-margin-b-0--xs">Anna Netrebko</h4>
+                                </div>
+                                <p class="g-font-weight--700">Soprano</p>
+                                <p>Identified by the journal Musical America as "a genuine superstar for the 21st century" and was named Musician of the Year for 2008.</p>
+                            </div>
+                        </div>
+                        <!-- End Netrebko -->
+                    </div>
+                    <div class="col-xs-6 g-full-width--xs">
+                        <!-- Eyvazov -->
+                        <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-400--lg">
+                            <img class="img-responsive g-width-100-percent--xs" src="img/400x400/01.jpg" alt="Image">
+                            <div class="g-position--overlay g-padding-x-30--xs g-padding-y-30--xs g-margin-t-o-60--xs">
+                                <div class="g-bg-color--primary g-padding-x-15--xs g-padding-y-10--xs g-margin-b-20--xs">
+                                    <h4 class="g-font-size-22--xs g-font-size-26--sm g-color--white g-margin-b-0--xs">Yusif Eyvazov</h4>
+                                </div>
+                                <p class="g-font-weight--700">Thenor</p>
+                                <p>An exciting voice whose sound is metallic, stentorian and markedly Italianate. The unalloyed dominance of the pure human voice trained to do exceptional things reaches us in a way that no other sound does.</p>
+                            </div>
+                        </div>
+                        <!-- End Eyvazov -->
+                    </div>
+                </div>
+                <div class="row g-overflow--hidden">
+                    <div class="col-xs-6 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                        <!-- Vlasenko -->
+                        <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-400--lg">
+                            <img class="img-responsive g-width-100-percent--xs" src="img/400x400/07.jpg" alt="Image">
+                            <div class="g-position--overlay g-padding-x-30--xs g-padding-y-30--xs g-margin-t-o-60--xs">
+                                <div class="g-bg-color--primary g-padding-x-15--xs g-padding-y-10--xs g-margin-b-20--xs">
+                                    <h4 class="g-font-size-22--xs g-font-size-26--sm g-color--white g-margin-b-0--xs">Denis Vlasenko</h4>
+                                </div>
+                                <p class="g-font-weight--700">Conductor</p>
+                                <p>Denis Vlasenko is rapidly emerging as one of the brightest Russian conductors of his generation.</p>
+                            </div>
+                        </div>
+                        <!-- End Vlasenko -->
+                    </div>
+                    <div class="col-xs-6 g-full-width--xs">
+                        <!-- Orchestra -->
+                        <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-400--lg">
+                            <img class="img-responsive g-width-100-percent--xs" src="img/400x400/08.jpg" alt="Image">
+                            <div class="g-position--overlay g-padding-x-30--xs g-padding-y-30--xs g-margin-t-o-60--xs">
+                                <div class="g-bg-color--primary g-padding-x-15--xs g-padding-y-10--xs g-margin-b-20--xs">
+                                    <h4 class="g-font-size-22--xs g-font-size-26--sm g-color--white g-margin-b-0--xs">Orchestra Miami</h4>
+                                </div>
+                                <p class="g-font-weight--700">Musicians</p>
+                                <p>A select group of professional musicians, whose collective body is unparalleled in terms of excellence and experience.</p>
+                            </div>
+                        </div>
+                        <!-- End Orchestra -->
+                    </div>
+                </div>
+            </div>
+ 
+        <!-- End Speakers -->
 
-</body>
+        <!-- Promo Section -->
+        <div class="g-promo-section">
+            <div class="container g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="row">
+                    <div class="col-sm-5 col-sm-push-7">
+                        <div class="g-margin-b-30--xs">
+                            <h3 class="g-font-size-32--xs g-font-size-36--sm"><a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes">Adrienne Arsht Center</a></h3>
+                            <p>Set in the heart of downtown Miami and designed by world-renowned architect Cesar Pelli, the Adrienne Arsht Center for the Performing Arts of Miami-Dade County is one of the world’s leading performing arts organizations and venues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-sm-pull-6 g-promo-section__img-right--md g-promo-section__img-left--md g-bg-position--center g-height-400--xs g-height-100-percent--md js__fullwidth-img">
+                <img class="img-responsive" src="img/970x970/01.jpg" alt="Image">
+            </div>
+        </div>
+        <!-- End Promo Section -->
+
+        <!-- Promo Section -->
+        <div class="g-promo-section">
+            <div class="container g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="g-margin-b-30--xs">
+                            <h3 class="g-font-size-32--xs g-font-size-36--sm"><a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes">Knight Concert Hall</a></h3>
+                            <p>The hall is renowned for world-class acoustics for classical music concerts, built like a room within a room ensuring the hall is completely isolated from ambient sounds and vibrations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 g-promo-section__img-right--md g-bg-position--center g-height-400--xs g-height-100-percent--md js__fullwidth-img">
+                <img class="img-responsive" src="img/970x970/02.jpg" alt="Image">
+            </div>
+        </div><br><br><br><br><br>
+        <!-- End Promo Section -->
+
+       <!-- Upcoming Event -->
+        <div id="plan" class="s-promo-block-v2 js__parallax-window" style="background: url(img/1920x1080/03.jpg) 50% 0 no-repeat fixed; background-size: cover;">
+            <div class="container">
+                <div class="row g-hor-centered-row--md">
+                    <div class="col-md-7 g-hor-centered-row__col g-padding-y-80--xs">
+                        <h2 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white">Tickets</h2>
+
+                        <p class="g-font-size-18--xs g-color--white-opacity g-margin-b-40--xs">Price range for standart seats: $89 - $421</p>
+                        <p class="g-font-size-18--xs g-color--white-opacity g-margin-b-40--xs">Optionaly we provide V.I.P. Seats.<br>Select up to 8 seats in Tier 1 boxes 9-14 for a total of $3,920.* The seats include an invitation to a meet and greet with Ms. Netrebko and Mr. Eyvazov and a glass of champagne. Note that each seat will appear as $3,920 until you reach the shopping cart.</p>
+                        <a href="http://www.arshtcenter.org/reserve/index.aspx?performanceNumber=26205" class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50 g-padding-x-50--xs g-margin-b-20--xs">Book your seats Now &#8594;</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Upcoming Event -->
+
+        <!-- Clients -->
+        <div class="g-padding-y-80--xs g-padding-y-125--sm">
+            <div class="g-container--sm">
+                <div class="g-text-center--xs g-margin-b-80--xs">
+                    <h2 class="g-font-size-32--xs g-font-size-36--sm">Partners</h2>
+                </div>
+            </div>
+            <div class="g-container--md">
+                <!-- Swiper Clients -->
+                <div class="s-swiper js__swiper-clients">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="wow fadeIn" data-wow-duration=".3" data-wow-delay=".1s">
+                                <img class="s-clients-v1" src="img/clients/01-dark.png" alt="Clients Logo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wow fadeIn" data-wow-duration=".3" data-wow-delay=".2s">
+                                <img class="s-clients-v1" src="img/clients/02-dark.png" alt="Clients Logo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wow fadeIn" data-wow-duration=".3" data-wow-delay=".3s">
+                                <img class="s-clients-v1" src="img/clients/03-dark.png" alt="Clients Logo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wow fadeIn" data-wow-duration=".3" data-wow-delay=".4s">
+                                <img class="s-clients-v1" src="img/clients/04-dark.png" alt="Clients Logo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wow fadeIn" data-wow-duration=".3" data-wow-delay=".5s">
+                                <img class="s-clients-v1" src="img/clients/05-dark.png" alt="Clients Logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Swiper Clients -->
+            </div>
+        </div>
+        <!-- End Clients -->
+
+        <!-- Google Map -->
+        <section class="s-google-map">
+            <div class="s-google-container g-height-400--xs">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3592.4270452922556!2d-80.1901846!3d25.7894819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6a716408603%3A0xdde78e16fb3d879d!2sAdrienne+Arsht+Center+for+the+Performing+Arts+of+Miami-Dade+County!5e0!3m2!1sen!2s!4v1533908818748" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <!-- End Google Map -->
+        <!--========== END PAGE CONTENT ==========-->
+
+        <!--========== FOOTER ==========-->
+        <footer class="g-bg-color--dark">
+            <!-- Links -->
+            <div class="g-hor-divider__dashed--white-opacity-lightest">
+                <div class="container g-padding-y-80--xs">
+                    <div class="row">
+                        <div class="col-sm-2 g-margin-b-20--xs g-margin-b-0--md">
+                            <ul class="list-unstyled g-ul-li-tb-5--xs g-margin-b-0--xs">
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="https://www.instagram.com/bisconcert/" target="_blank">Instagram</a></li>
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="https://www.facebook.com/bisconcert/" target="_blank">Facebook</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2 g-margin-b-20--xs g-margin-b-0--md">
+                            <ul class="list-unstyled g-ul-li-tb-5--xs g-margin-b-0--xs">
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="https://twitter.com/BisConcertUS" target="_blank">Twitter</a></li>
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="https://www.linkedin.com/company/bisconcert/" target="_blank">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2 g-margin-b-40--xs g-margin-b-0--md">
+                            <ul class="list-unstyled g-ul-li-tb-5--xs g-margin-b-0--xs">
+                                <li><a class="g-font-size-15--xs g-color--white-opacity" href="https://www.subscribepage.com/bisconcert_us" target="_blank">Subscribe to Our Newsletter</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1 s-footer__logo g-padding-y-50--xs g-padding-y-0--md">
+                            <h3 class="g-font-size-18--xs g-color--white">Organized by BisConcert</h3>
+                            <p class="g-color--white-opacity">BisConcert is an expert in the field of organization of all events on a turnkey basis. Our company holds the highest standards in the conducting different events like exhibitions, concerts or open-air festival.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Links -->
+        </footer>
+        <!--========== END FOOTER ==========-->
+
+        <!-- Back To Top -->
+        <a href="javascript:void(0);" class="s-back-to-top js__back-to-top"></a>
+
+        <!--========== JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) ==========-->
+        <!-- Vendor -->
+        <script type="text/javascript" src="vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.migrate.min.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.smooth-scroll.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.back-to-top.min.js"></script>
+        <script type="text/javascript" src="vendor/scrollbar/jquery.scrollbar.min.js"></script>
+        <script type="text/javascript" src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="vendor/swiper/swiper.jquery.min.js"></script>
+        <script type="text/javascript" src="vendor/masonry/jquery.masonry.pkgd.min.js"></script>
+        <script type="text/javascript" src="vendor/masonry/imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery.parallax.min.js"></script>
+
+        <script type="text/javascript" src="vendor/jquery.wow.min.js"></script>
+
+        <!-- General Components and Settings -->
+        <script type="text/javascript" src="js/global.min.js"></script>
+        <script type="text/javascript" src="js/components/header-sticky.min.js"></script>
+        <script type="text/javascript" src="js/components/scrollbar.min.js"></script>
+        <script type="text/javascript" src="js/components/magnific-popup.min.js"></script>
+        <script type="text/javascript" src="js/components/swiper.min.js"></script>
+        <script type="text/javascript" src="js/components/masonry.min.js"></script>
+        <script type="text/javascript" src="js/components/parallax.min.js"></script>
+
+        <script type="text/javascript" src="js/components/wow.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+              $("body").on("click", "a[href^=#]", function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                  var target = $(this.hash);
+                  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                  if (target.length) {
+                    $('html,body').animate({
+                      scrollTop: target.offset().top
+                    }, 800);
+                    return false;
+                  }
+                }
+              });
+            });
+        </script>
+        <!--========== END JAVASCRIPTS ==========-->
+
+    </body>
+    <!-- End Body -->
 </html>
